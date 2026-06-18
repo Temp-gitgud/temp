@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/Temp-gitgud/temp.git
-    targetRevision: HEAD
+    targetRevision: main
     path: gatekeeper/constraints
   destination:
     server: https://kubernetes.default.svc
