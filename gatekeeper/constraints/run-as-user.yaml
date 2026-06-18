@@ -16,7 +16,7 @@ spec:
     - gatekeeper-system
     - argocd
     - kube-system
-    - argocd-rollouts
+    - argo-rollouts
     - demo
     - gatekeeper
   parameters:
