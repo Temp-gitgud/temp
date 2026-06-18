@@ -10,5 +10,11 @@ spec:
     kinds:
     - apiGroups: ["apps"]
       kinds: ["Deployment"]
+    excludedNamespaces:        # ← thêm phần này
+    - external-secrets
+    - cosign-system
+    - gatekeeper-system
+    - argocd
+    - kube-system
   parameters:
     labels: ["owner"]
