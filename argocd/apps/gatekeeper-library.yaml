@@ -10,7 +10,7 @@ spec:
   source:
     repoURL: https://github.com/open-policy-agent/gatekeeper-library
     targetRevision: master
-    path: library/general   # chứa các ConstraintTemplate phổ biến
+    path: gatekeeper/library   # chứa các ConstraintTemplate phổ biến
   destination:
     server: https://kubernetes.default.svc
     namespace: gatekeeper-system
