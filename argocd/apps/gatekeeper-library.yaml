@@ -4,13 +4,13 @@ metadata:
   name: gatekeeper-library
   namespace: argocd
   annotations:
-    argocd.argoproj.io/sync-wave: "2"   # sau controller, trước constraints
+    argocd.argoproj.io/sync-wave: "2"
 spec:
   project: default
   source:
-    repoURL: https://github.com/open-policy-agent/gatekeeper-library
-    targetRevision: master
-    path: gatekeeper/library   # chứa các ConstraintTemplate phổ biến
+    repoURL: https://github.com/Temp-gitgud/temp.git
+    targetRevision: main
+    path: gatekeeper/library
   destination:
     server: https://kubernetes.default.svc
     namespace: gatekeeper-system
