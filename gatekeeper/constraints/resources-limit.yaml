@@ -10,6 +10,15 @@ spec:
     kinds:
     - apiGroups: ["*"]
       kinds: ["Pod"]
+    excludedNamespaces:
+    - external-secrets
+    - cosign-system
+    - gatekeeper-system
+    - argocd
+    - kube-system
+    - argocd-rollouts
+    - demo
+    - gatekeeper
   parameters:
     cpu: "2"
     memory: "4Gi"
