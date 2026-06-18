@@ -1,0 +1,22 @@
+apiVersion: templates.gatekeeper.sh/v1
+kind: ConstraintTemplate
+metadata: { name: k8srequiredlabels }
+spec:
+  crd:
+    spec:
+      names: { kind: K8sRequiredLabels }  # sinh ra CRD mới tên này
+      validation:
+        openAPIV3Schema:
+          properties:
+            labels: { type: array }  # param nhận vào từ Constraint
+  targets:
+  - target: admission.k8s.gatekeeper.sh
+    rego: |
+      package k8srequiredlabels
+      violation[{"msg": msg}] {
+        provided := {l | input.review.object.metadata.labels[l]}
+        required := {l | l := input.parameters.labels[_]}
+        missing := required - provided
+        count(missing) > 0                          
+        msg := sprintf("Thiếu label: %v", [missing])
+      }
