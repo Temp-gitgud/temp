@@ -3,7 +3,7 @@ kind: K8sPSPHostNetworkingPorts
 metadata:
   name: host-network
   annotations:
-    argocd.argoproj.io/sync-wave: "3"
+    argocd.argoproj.io/sync-wave: "4"
 spec:
   enforcementAction: deny
   match:

@@ -3,7 +3,7 @@ kind: K8sPSPAllowedUsers
 metadata:
   name: run-as-user
   annotations:
-    argocd.argoproj.io/sync-wave: "3"
+    argocd.argoproj.io/sync-wave: "4"
 spec:
   enforcementAction: deny
   match:
