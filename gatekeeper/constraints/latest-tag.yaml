@@ -12,12 +12,9 @@ spec:
       kinds: ["Pod"]
     excludedNamespaces:
     - external-secrets
+    - argocd
     - cosign-system
     - gatekeeper-system
-    - argocd
     - kube-system
-    - argo-rollouts
-    - demo
-    - gatekeeper
   parameters:
     tags: ["latest"]

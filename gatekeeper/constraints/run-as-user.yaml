@@ -16,9 +16,6 @@ spec:
     - gatekeeper-system
     - argocd
     - kube-system
-    - argo-rollouts
-    - demo
-    - gatekeeper
   parameters:
     runAsUser:
       rule: MustRunAsNonRoot

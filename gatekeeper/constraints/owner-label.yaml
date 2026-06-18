@@ -17,7 +17,5 @@ spec:
     - argocd
     - kube-system
     - argo-rollouts
-    - demo
-    - gatekeeper
   parameters:
     labels: ["owner"]

@@ -10,14 +10,5 @@ spec:
     kinds:
     - apiGroups: ["*"]
       kinds: ["Pod"]
-    excludedNamespaces:
-    - external-secrets
-    - cosign-system
-    - gatekeeper-system
-    - argocd
-    - kube-system
-    - argo-rollouts
-    - demo
-    - gatekeeper
   parameters:
     hostNetwork: false
