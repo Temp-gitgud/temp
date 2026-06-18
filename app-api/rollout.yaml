@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: api
-        image: ghcr.io/temp-gitgud/w10-api:v0.0.1
+        image: ghcr.io/temp-gitgud/w10-api:v0.0.1-cd5ca96
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
