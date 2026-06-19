@@ -27,6 +27,9 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Lowercase image name
+        run: echo "IMAGE_NAME_LOWER=$(echo ${{ env.IMAGE_NAME }} | tr '[:upper:]' '[:lower:]')" >> $GITHUB_ENV
+
       - name: Calculate semantic version
         id: semver
         uses: paulhatch/semantic-version@v5.4.0
@@ -70,7 +73,7 @@ jobs:
       - name: Trivy scan
         uses: aquasecurity/trivy-action@master
         with:
-          image-ref: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.semver.outputs.version }}
+          image-ref: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME_LOWER }}:${{ steps.semver.outputs.version }}
           severity: HIGH,CRITICAL
           exit-code: 1
 
@@ -81,7 +84,7 @@ jobs:
         run: |
           echo "${{ secrets.COSIGN_PRIVATE_KEY }}" > cosign.key
           cosign sign --key cosign.key \
-            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.semver.outputs.version }} -y
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME_LOWER }}:${{ steps.semver.outputs.version }} -y
         env:
           COSIGN_PASSWORD: ${{ secrets.COSIGN_PASSWORD }}
 
