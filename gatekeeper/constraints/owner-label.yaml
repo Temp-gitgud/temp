@@ -17,5 +17,6 @@ spec:
     - argocd
     - kube-system
     - argo-rollouts
+    - monitoring
   parameters:
     labels: ["owner"]
