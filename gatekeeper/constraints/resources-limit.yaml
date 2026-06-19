@@ -16,6 +16,7 @@ spec:
     - gatekeeper-system
     - argocd
     - kube-system
+    - monitoring 
   parameters:
     cpu: "2"
     memory: "4Gi"
